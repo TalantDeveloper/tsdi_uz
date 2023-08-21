@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="kafedra-section">
+        <div class="kafedra-single">
+
+            <div class="mudir">
+                <i class="mudir-i fa fa-arrow-down"></i>
+                <span><img src="{{ chief.image.url }}" alt=""/></span>
+                <span class="mudir-info">
+                    <h1>{{ chief.name }}</h1>
+                    <h3>{{ chief.position }}</h3>
+                    <ul>
+                        <li><i class="fa fa-phone"></i>{{ chief.phone_number }}</li>
+                        <li><i class="fa fa-graduation-cap"></i>{{ chief.academic_title }}</li>
+                        <li><i class="fa fa-envelope"></i>{{ chief.email }}</li>
+                        <li><i class="fa fa-clock-o"></i>{{ chief.reception_time |safe }}</li>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="xodimlar">
+                {#                        @if($xodim[0]['blog_id']=='Raqamli ta’lim texnologiyalari markazi')#}
+                {#                        <span class="xodim">#}
+                {#                            <img class="markaz-image" src="https://tsdi.uz/storage/sahifas/photo_2020-06-17_09-56-58.jpg" alt="rasm"/>#}
+                {#                            <ul>#}
+                {#                            <h4>Qoraboyev Saidazim Saydali o`g`li</h4>#}
+                {#                                <li><i class="fa fa-user"></i>Web dizayner</li>#}
+                {#                                <li><i class="fa fa-phone"></i>+99891 151-31-17</li>#}
+                {#                                <li><a href="https://t.me/Developer1524"><i class="fa fa-paper-plane"></i>@Developer1524</a></li>#}
+                {#                                <li style="color:brown"><i class="fa fa-gavel"></i>{{ __('main.myjob') }}</li>#}
+                {#                            </ul>#}
+                {#                        </span>#}
+                {#			                @endif#}
+
+                {% for employee in employees %}
+                    <span class="xodim">
+                        <img class="markaz-image" src="{{ employee.image }}" alt="rasm"/>
+                        <ul>
+                            <h4>{{ employee.name }}</h4>
+                            <li><i class="fa fa-user"></i>{{ employee.academic_title }}</li>
+                            <li><i class="fa fa-phone"></i>{{ employee.phone_number }}</li>
+					        <li><a href="{{ employee.email }}"><i class="fa fa-envelope"></i>{{ employee.email }}</a></li>
+					        <li style="color:brown"><i class="fa fa-gavel"></i>{{ employee.position }}</li>
+                        </ul>
+                    </span>
+                {% endfor %}
+
+            </div>
+
+            <h2>{{ department.name }}</h2>
+            <p class="news-text">{{ department.content |safe }}</p>
+
+            {#            <p class="news-icon"><span><i class="fa fa-calendar"></i> 28.10.2021 <i class="fa fa-eye"></i> 234 </span>#}
+            {#            </p>#}
+
+        </div>
+    </section>
+
+
+{% endblock %}

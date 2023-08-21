@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .pagination {
+            display: flex;
+            column-gap: 25px;
+            margin-top: 30px
+        }
+        .pagination .page-item {
+            background-color: rgb(46, 39, 81, 0.8);
+            display: flex;
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+        }
+        .pagination .page-item .page-link {
+            color: #FFF;
+        }
+        .pagination .page-item span {
+            display: flex;
+            width: 30px;
+            height: 30px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(46, 39, 81);
+            border-radius: 2px;
+            color: rgb(46, 39, 81) !important;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <div class="kafedra-title" style="background-image: url({% static 'assets/images/medik.jpg' %})">
+        <p>Institut Yangiliklari</p>
+        <ul>
+            <li><a href="/">Asosiy sahifa</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <section class="news-box yangiliklar" style="background-image:url('https://tsdi.uz/assets/images/background.png')">
+        <div class="news">
+            {% for new in news %}
+                <span class="new">
+				    <em class="newstime">{{ new.create_at|date:'d-m-Y' }} |{{ new.create_at|time:'H:i' }}</em>
+                    <a href="{% url 'main:yangilik' new.id %}">
+                        <img src="{{ new.image.url }}" alt="Yangiliklar"/>
+                        <p class="matn" id="text"><i class="fa fa-address-card-o"></i>{{ new.title }} </p>
+                    </a>
+                </span>
+            {% endfor %}
+            {#            {!! $post->links() !!}#}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        .h-blog i {
+            color: #9457EB !important;
+            background-color: #FFF !important;
+        }
+
+        .h-blog p {
+            color: #9457EB !important;
+        }
+    </style>
+    <section class="havolalar">
+        <div class="havola">
+            {% for service in services %}
+                <span class="h-blog">
+                    {{ service.icon_class | safe }}
+                    <a href="{{ service.url }}"><p>{{ service.name }}</p></a>
+                </span>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

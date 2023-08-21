@@ -1,0 +1,456 @@
+@media only screen and (max-width: 600px) {
+.addition-links{flex: 1;}
+.addition-links li{display: none;}
+
+.mobil{display: block}
+.mobil a{color:#FFF;}
+.mobil  .fa-warning{display:none}
+
+.markaz-image{display:none}
+	#myrasm{display: block;}
+	#myVideo{display:none;}
+	
+	.slide-box{
+		margin: 0;
+	}
+	.slide-box::before{
+		display:none;
+	}
+
+	.institut-name h1{
+    	font-size: 30px;
+    	padding: 7px 15px;
+		background: rgb(255, 255, 255, 0.5);
+	}
+	.qr-rasm{z-index:1!important}
+	.com-elon {
+		display: none!important;
+	}
+	.div-elon {
+		display: flex!important;
+	}
+    .header{
+        padding: 0;
+        position: fixed;
+    	width: 100%;
+    	z-index: 5;
+    }
+	.yangi-yil {
+		display: none;
+	}
+    .header-bottom {
+        padding: 40px 10px 0 10px;
+    }
+	.list-box{
+    	overflow: auto;
+    	left: 0;
+    	top: 70px;
+    	padding: 0;
+    	background: rgb(63,65,214);
+    	position: fixed;
+	}
+	.wk .list-a, .inner-lists a{
+    	font-weight: 400;
+    	color: #fff;
+		font-size: 14px;
+	}
+	.list{
+    	padding-bottom: 10px;
+	}
+
+	.inner-lists, .inner-inner-lists li {
+		background: rgb(63,65,214);
+	}
+	
+	.under-list{
+    	width: 100%;
+		justify-content: space-between;
+	}	
+   .under-list p{
+		font-size: 13px;
+	}
+    .havolalar {
+        padding: 20px 10px;
+    }
+    .havola {
+        display: block;
+    }
+    .h-blog {
+        margin: 20px 10px;
+        width: auto;
+    }
+    .i-servsec {
+        padding: 0 15px;
+    }
+	.i-servsec .i-service .services{
+        display: block;
+    }
+    .service {
+		padding: 10px 0;
+    }
+	.section-shortitle{
+    	margin-top: 5px;
+    	line-height: 22px;
+		font-size: 16px;
+	}
+	.i-servsec .number{
+
+		font-size: 20px;
+	}
+	.section-shortitle, .who{
+		font-size: 14px;
+	}
+
+
+    .news-box-sec {
+        padding: 20px;
+    }
+    .news {
+        flex-direction: column;
+    }
+	.new {
+		width: 100%;
+	}
+	.yangiliklar .news .new {
+    	margin: 0 auto 25px;
+    	width: 100%;
+	}
+    .institut-sect {
+        padding: 20px;
+    }
+    .videos {
+        display: block;
+    }
+    .addition {
+        display: none;
+    }
+    .hamkor-box {
+        padding: 50px 20px;
+    }
+	.foot-name{
+		padding: 20px 15px;
+	}
+	.foot-menu .foot-content{
+    	padding: 0 15px;
+    	justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.foot-menu .foot-content nav{
+		width: 48%;
+	}
+    .copyright {
+        display: block;
+    }
+    .copyright img {
+        display: none;
+    }
+
+
+    .fakultet-title {
+        padding: 30px 20px 0;
+    }
+    .fakultet-blog {
+        padding: 40px 20px 70px;
+    }
+  .fakultet-content{
+  	display: block;
+
+  }
+    .f-blog .blog {
+        display: block;
+        padding: 20px 0;
+    }
+    .f-blog {
+        transition: 500ms;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+    .dekan ul {
+        padding: 15px 0;
+    }
+    .dekan li {
+        padding: 5px 0;
+    }
+	.zamdekan{
+    	display: block;
+	}
+    .zamdekan div {
+    	border: none;
+    	box-shadow: none;
+    	border-left: 3px solid #444;
+        margin-bottom: 10px;
+    }
+    .f-blog .about {
+        padding: 0;
+    }
+	.f-blog .blog img{
+		width: 100%;
+	}
+    .f-blog .blog .fa-hand-o-down {
+        bottom: -10px;
+        right: 10px;
+      }
+    
+    .content, .page-content {
+        padding: 40px 20px;
+    	background-image: #fff!important;
+    }
+    .content .blog {
+        box-shadow: none;
+        padding: 0 0 20px;
+    }
+	.sahifa-mobile{background: white;background-image: none!important;}
+    .rektor-title {
+        padding: 30px 20px 0;
+    }
+    .rektor-section {
+        padding: 40px 0;
+      }
+    .rektor {
+        display: block;
+    }
+    .rektor-name {
+        padding: 15px 0;
+        margin: 0 15px;
+     }
+    .contact-with nav:last-child {
+        margin-left: 0;
+     }
+   	.rektor img {
+        width: 100%;
+    }
+    .pro-blog {
+        display: block;
+    }
+    .pro-blog img {
+        width: 100%;
+    }
+	.pro-blog .contact-with li {
+        margin-bottom: 20px;
+     }
+
+    .news-box {
+        padding: 50px 20px;
+    }
+
+    .kafedra-blog {
+        padding: 40px 20px 0;
+      }
+    .kafedra-blogs {
+        display: block;
+      }
+    .kafedra {
+        width: auto;
+    }
+	.mudir span img {
+    	width: 100%;
+    	height: auto;
+	}
+    .kafedra-name {
+        font-size: 14px;
+      }
+    .kafedra-title {
+        padding: 30px 20px 0;
+      }
+    .kafedra-section {
+        padding: 0;
+    }
+    .kafedra-single {
+        padding: 20px;
+    }
+    .mudir {
+        display: block;
+    }
+    .mudir-info ul {
+        display: block;
+    }
+    .mudir-info ul li {
+        width: auto;
+    }
+    .xodimlar {
+        display: block;
+    }
+    .xodim {
+        width: auto;
+    }
+
+    .markaz-title {
+        padding: 30px 10px 0;
+    }
+    .markaz-blog {
+        padding: 40px 20px 70px;
+    }
+    .markaz-blogs {
+        display: block;
+    }
+    .markaz{
+        width: auto;
+    }
+	.news-section {
+    	padding: 40px 20px 70px;
+  	}
+	.news-blogs {
+    	display: block;
+  	}
+	.news-blog-outer{
+    	width: 100%;	
+	}
+
+	.last-news {
+    	width: 100%;
+    	margin-top: 50px;
+  	}
+	.qr-rasm{display:none}
+	.korrup-blogs, .korrupsiya-video{flex-direction: column}
+	.korrupsiya-video video{width: 100%;margin-bottom: 15px}
+  }
+
+
+@media only screen and (max-width: 1400px) {
+	.header-search {
+    	display: none;
+	}
+}
+@media only screen and (max-width: 1100px) {
+	.headTop {
+        padding: 10px;
+    }
+	.header-bottom {
+        padding: 40px 10px 0 10px;
+    }
+	.header-search {
+    	display: none;
+	}
+    .inner-lists {
+        top: 10px;   
+        position: relative;
+    }
+    .lists-a-befor::before {
+        width: 0;
+        background-color: transparent;
+    }
+    .list:first-child {
+        margin-top: 30px;
+    }
+    .list {
+        display: none;
+    }
+    .lb {
+        left: 0;
+        padding-left: 10px;
+        position: absolute;
+        background-color: #9457EB;
+    }
+    .lb .list-a, .lb .list-a a {
+        color: #fff;
+    }
+    .lb .inner-lists {
+        left: 5px;
+        position: relative;
+        background-color: #9457EB;
+    }
+    .lb .inner-lists li {
+        position: relative;
+        padding: 10px 0;
+    }
+    .inner-inner-lists {
+        left: 15px;
+        position: relative;
+
+    }
+    .lb .inner-inner-lists li {
+        background-color: #9457EB;
+    }
+    .bottom a img {
+        display: none;
+    }
+    .list-menu-box {
+        display: flex;
+    	column-gap: 5px;
+        background-color: transparent;
+    }
+    .corusel img{
+        height: 100vh;
+        width: auto;
+    }
+    .messenger-top li {
+        display: none;
+    }
+	.yangi-yil {
+		display: none;
+	}
+	.taglist {
+		padding: 0;
+
+	}
+	.taglist li a {
+		padding: 10px;
+	}
+	.havolalar {
+    	padding: 70px 20px;
+	}
+	.i-service {
+    	padding: 50px 20px;
+	}
+	.service {
+    	border-radius: 5px;
+	}
+	.news-box {
+    	padding: 50px 20px;
+	}
+	.yangiliklar {
+    	padding: 50px 20px;
+	}
+	.yangiliklar .news {
+	justify-content: space-between;
+	}
+	.yangiliklar .new {
+		width: 32%;
+	}
+	.institut {
+    	padding: 50px 20px;
+	}
+	.addition {
+		display: none;
+	}
+	.hamkor-box {
+    	padding: 50px 20px;
+	}
+	.foot {
+    	padding: 0 20px;
+	}
+
+	.rektor-section {
+    	padding: 40px 20px;
+  	}
+	.rektor-title {
+    	padding: 30px 20px 0;
+  	}
+	.rektor {
+    	display: block;
+  	}
+	.fakultet-title {
+    	padding: 30px 20px 0;
+  	}
+	 .fakultet-blog {
+      padding: 40px 20px 70px;
+  	}
+	.kafedra-blog {
+    	padding: 40px 20px 70px;
+  	}
+    .kafedra-section {
+        padding: 40px 20px 70px;
+    }
+	.markaz-title {
+    	padding: 30px 20px 0;
+  	}
+	.markaz-blog {
+    	padding: 40px 20px 70px;
+ 	}
+  	.news-section {
+    	padding: 40px 20px 70px;
+  	}
+	.content {
+    	padding: 40px 40px;
+    }
+}

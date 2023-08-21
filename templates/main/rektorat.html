@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .about-rektor::-webkit-scrollbar {
+            width: 0.2em;
+        }
+
+        .about-rektor::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px #ccc;
+        }
+
+        .about-rektor::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid #ddd;
+        }
+
+        .about-rektor {
+            max-height: 260px;
+            overflow: auto;
+            padding-right: 15px !important;
+        }
+    </style>
+    <div class="rektor-title" style="background-image: url('{% static "assets/images/medik.jpg" %}')">
+        <p>Ma'muriyat</p>
+        <ul>
+            <li><a href="/">Asosiy sahifa</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <section class="rektor-section">
+        <div class="rektor-blog">
+
+
+            <h2 class="rektor-name">{{ rector.name }}</h2>
+            <div class="rektor">
+                <span>
+                    <img style="border-radius: 3px" src="{{ rector.image.url }}" alt=""/>
+                </span>
+                <span class="rektor-info">
+                    <h2>Qisqa tarjimai hol</h2>
+                    <p class="about-rektor">{{ rector.content | safe }}</p>
+                    <ul class="contact-with">
+                        <nav>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>
+                                    <h4>Telefon</h4>
+                                    <p>{{ rector.phone_number }}</p>
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <span>
+                                    <h4>Elektron pochta</h4>
+                                    <p>{{ rector.email }}</p>
+                                </span>
+                            </li>
+                        </nav>
+                        <nav>
+                            <li>
+                                <i class="fa fa-graduation-cap"></i>
+                                <span>
+                                    <h4>Ilmiy daraja-unvon</h4>
+                                    <p>{{ rector.academic_title }}</p>
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-clock-o"></i>
+                                <span>
+                                    <h4>Qabul vaqti</h4>
+                                    <p>{{ rector.reception_time|safe }}</p>
+                                </span>
+                            </li>
+                        </nav>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="prorektors">
+                {% for rectory in rectories %}
+                    {% if not rectory.is_rector %}
+                        <div class="prorektor">
+                            <h3 class="pro-name">{{ rectory.position }}</h3>
+                            <div class="pro-blog">
+                                <span>
+                                    <img style="" src="{{ rectory.image.url }}" alt=""/>
+                                </span>
+                                <span>
+                                    <h2>{{ rectory.name }}</h2>
+                                    <p class="about-rektor">{{ rectory.content | safe }}</p>
+                                    <ul class="contact-with">
+                                        <li>
+                                            <i class="fa fa-graduation-cap"></i>
+                                            <span>
+                                                <h4>Ilmiy daraja-unvon</h4>
+                                                <p>{{ rectory.academic_title }}</p>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone"></i>
+                                            <span>
+                                                <h4>Telefon</h4>
+                                                <p>{{ rectory.phone_number }}</p>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-clock-o"></i>
+                                            <span>
+                                                <h4>Qabul vaqti</h4>
+                                                <p>{{ rectory.reception_time|safe }}</p>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

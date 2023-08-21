@@ -1,0 +1,69 @@
+{% extends 'kafedra/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="bgded overlay padtop" style="background-image:url({% static 'asserts/images/kafedra.jpg' %});">
+        <header id="header" class="hoc clear">
+            <ul class="tillar">
+                <!-- tillarni linklari -->
+                <li><a href="#"><img src="{% static 'asserts/images/flag-en.png' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'asserts/images/flag-uz.png' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'asserts/images/flag-ru.png' %}" alt=""></a></li>
+            </ul>
+            <div id="logo" class="fl_left">
+                <h1 class="logotip">
+                    <a href="https://tsdi.uz/">
+                        <img src="{% static 'asserts/images/logo.png' %}" alt=""/>
+                        tsdi.uz
+                    </a>
+                </h1>
+            </div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="#">Bosh sahifa</a></li> <!-- welcome url -->
+                    <li><a href="#">Xodimlar</a></li> <!-- xodim url -->
+                    <li><a href="#">Biz hadimizda</a></li> <!-- about url -->
+                    <li><a href="https://tsdi.uz/sahifalar%5Caloqa%20markazi">biz bilan aloqa</a></li> <!-- call center url -->
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+            <!-- main body -->
+            <div class="content">
+                <div id="gallery">
+                    <figure>
+                        <header class="heading elbek" style="text-align: center;">
+                            <!-- Kafedra nomi va haqida ma'lumotlar -->
+                            Gospital terapevtik stomatologiya kafedrasi
+                        </header>
+                        <div class="sahifa">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolorum harum magnam
+                                praesentium reiciendis rerum vitae? Ad, alias, architecto eaque eligendi, explicabo illo
+                                iste nesciunt nisi numquam officiis sed vero.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam beatae consectetur,
+                                facilis harum in inventore magnam maxime modi nisi, nulla obcaecati odio, perferendis
+                                perspiciatis provident quidem temporibus tenetur ut!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam beatae consectetur,
+                                facilis harum in inventore magnam maxime modi nisi, nulla obcaecati odio, perferendis
+                                perspiciatis provident quidem temporibus tenetur ut!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam beatae consectetur,
+                                facilis harum in inventore magnam maxime modi nisi, nulla obcaecati odio, perferendis
+                                perspiciatis provident quidem temporibus tenetur ut!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam beatae consectetur,
+                                facilis harum in inventore magnam maxime modi nisi, nulla obcaecati odio, perferendis
+                                perspiciatis provident quidem temporibus tenetur ut!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam beatae consectetur,
+                                facilis harum in inventore magnam maxime modi nisi, nulla obcaecati odio, perferendis
+                                perspiciatis provident quidem temporibus tenetur ut!
+                                </p>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <!-- / main body -->
+            <div class="clear"></div>
+        </main>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="markaz-title" style="background-image: url({% static 'assets/images/medik.jpg' %})">
+        <p>Markaz va bo'limlar</p>
+        <ul>
+            <li><a href="/">Asosiy sahifa</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <section class="markaz-blog" style="background-image:url(https://www.gov.uz/img/title_bg.png)">
+        <div class="markaz-blogs">
+            {% for department in departments %}
+                <div class="markaz">
+                    <a href="{% url 'main:markaz' department.id %}">
+                        <i class="fa fa-graduation-cap"></i>
+                        <h3 class="markaz-name">
+                            {{ department.name }}
+                        </h3>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

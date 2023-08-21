@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="page-content content sahifa-mobile">
+        <div class="blog" style="overflow-x:auto; background: #FFF">
+            <h2 class="madhiya-title">{{ sahifa.title }}</h2>
+            <p class="page-body">{{ sahifa.content|safe }}</p>
+        </div>
+    </div>
+
+{% endblock %}

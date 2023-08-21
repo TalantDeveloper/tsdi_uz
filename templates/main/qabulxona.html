@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <style>
+        .section-qabul {
+            padding: 50px 140px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .section-qabul {
+                padding: 0;
+            }
+
+            .ws-qabul {
+                padding: 15px !important;
+            }
+
+            .ws-qabul .title {
+                padding: 15px 0;
+            }
+
+            .ws-qabul form ul li {
+                width: 100% !important;
+            }
+        }
+
+        .ws-qabul {
+            margin: 0 auto;
+            max-width: 1400px;
+            padding: 30px 50px 50px;
+            box-shadow: 0 0 15px #f2f2f2;
+            background-color: #FFF;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .ws-qabul .title {
+            text-align: center;
+            color: #4a4c4f;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .ws-qabul p:not(:first-child) {
+            line-height: 24px;
+            color: dimgray;
+            padding: 15px 0;
+            border-bottom: 1px solid #c5c5c5;
+        }
+
+        .ws-qabul form ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            justify-content: space-between;
+        }
+
+        .ws-qabul form ul li {
+            width: 49%;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .ws-qabul form ul li:last-child {
+            width: 100%;
+        }
+
+        .ws-qabul form ul li i {
+            top: 15px;
+            right: 15px;
+            color: #9457EB;
+            position: absolute;
+        }
+
+        .ws-qabul form ul li input, .ws-qabul form ul li textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 3px;
+            border: 1px solid #e5e5c5;
+            outline: none;
+            resize: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .ws-qabul form p {
+            text-align: center;
+        }
+
+        .ws-qabul input[type=submit] {
+            color: #FFF;
+            outline: none;
+            border: none;
+            transition: 1s;
+            font-size: 18px;
+            padding: 12px 25px;
+            background-color: #9457EB;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .ws-qabul input[type=submit]:hover {
+            transition: 1s;
+            background-color: #2e2751;
+        }
+    </style>
+
+    <section class="section-qabul" style="background-image:url(https://www.gov.uz/img/title_bg.png)">
+        <div class="ws-qabul">
+            <p class="title">Toshkent davlat Stomotologiya instituti. Rektor qabulxonasi</p>
+            <p>Hurmatli foydalanuvchi!</p>
+            <p>Sizga Toshkent davlat Stomotologiya inistituti rektoriga bevosita elektron tarzda murojaatlarni
+                yuborish imkoniyati taqdim etilmoqda. Shu bilan birga, Sizning yuborayotgan murojaatingiz rasmiy maqomga
+                ega ekanligini ham eslatib qo‘ymoqchimiz...
+            </p>
+            <p>1. Jismoniy shaxs sifatida murojaat yo‘llasangiz familiyangiz (ismingiz, otangizning ismi),
+                yashash joyingiz to‘g‘risidagi ma’lumotlar ko‘rsatilgan va murojaatingiz mohiyati bayon etilgan bo‘lishi
+                shart. Yuridik shaxs sifatida murojaat yo‘llasangiz yuridik shaxsning to‘liq nomi, uning joylashgan joyi
+                (pochta manzili) to‘g‘risidagi ma’lumotlar ko‘rsatilgan va murojaatning mohiyati bayon etilishi talab
+                etiladi.
+            </p>
+            <p>2. Alohida e’tibor bering! Tuhmat, haqorat so‘zlar ishlatilgan va yolg‘on xabar beruvchi
+                murojaatlarni taqdim etish mumkin emas.
+            </p>
+            <p>3. Shuningdek, quyidagi holatlarda murojaatlaringiz rad etilishi mumkinligini eslatib
+                o‘tmoqchimiz:
+                <br>• odobsizlik mazmunidagi murojaatlar (uyatsiz yoxud haqoratli iboralar, tahdidlar, mantiq va
+                ma’nosi bo‘lmagan takliflar va shunga o‘xshash murojaatlar);
+                <br>• murojaat matnida tushunarsiz qisqartirishlar yoki reklama materiallari mavjud bo‘lgan,
+                tarkibida aniq arizalar, shikoyatlar yoki takliflar bo‘lmagan murojaatlar.
+            </p>
+            <p>4. Shuningdek, foydalanuvchining bir necha bor bitta masala bo‘yicha javob berilgan murojaatini
+                qayta yuborilganda agar unda yangi vajlar yoki holatlar keltirilmagan bo‘lsa, ko‘rib chiqilmaydi. Mazkur
+                shartlarning barchasi O‘zbekiston Respublikasining amaldagi qonunchiligidan kelib chiqqan holda
+                belgilangan.
+            </p>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <ul>
+                    <li><input name="name" type="text" placeholder="FISH"><i class="fa fa-user"></i>
+                    </li>
+                    <li><input name="manzil" type="text" placeholder="Manzil">
+                        <i class="fa fa-building"></i></li>
+                    <li><input name="pochta" type="text" placeholder="Elektron pochta">
+                        <i class="fa fa-pencil"></i></li>
+                    <li><input name="nomer" type="text" placeholder="Telefon">
+                        <i class="fa fa-phone"></i>
+                    </li>
+                    <li><input name="tashkilot" type="text" placeholder="Tashkilot">
+                        <i class="fa fa-envelope"></i></li>
+                    <li><input name="mavzu" type="text" placeholder="Mavzu">
+                        <i class="fa fa-tag"></i>
+                    </li>
+
+                    <li><textarea name="xabar" id="" cols="30" rows="20"
+                                  placeholder="Xabar"></textarea><i class="fa fa-pencil"></i></li>
+                </ul>
+                <p><input type="submit" value="Xabarni Yuborish"></p>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

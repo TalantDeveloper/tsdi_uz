@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        .news-blog {
+            overflow: hidden;
+        }
+        .news-blog img {
+        }
+    </style>
+    <div>
+        <div class="kafedra-title" style="background-image: url({% static 'assets/images/medik.jpg' %})">
+            <p>Institut yangililari</p>
+            <ul>
+                <li><a href="/">Asosiy sahifa</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <section class="news-section">
+            <div class="news-blogs">
+                <div class="news-blog-outer">
+                    <div class="news-blog">
+                        <h2 class="news-name">
+                            {{ new.title }}
+                        </h2>
+                        <p id="htmlContent" class="news-text">
+                            {{ new.content | safe }}
+                            <br>
+                        </p>
+                        <p class="news-icon"><span><i class="fa fa-calendar"></i> {{ new.create_at }} </span>
+                            <span><a href="" onclick="display()"><i class="fa fa-print"></i>
+                             chop etish </a></span></p>
+                    </div>
+                </div>
+                <div class="last-news" style="background: transparent">
+                    <h3>So'ngi yangiliklar</h3>
+                    {% for post in news %}
+                        <div class="last-new" style="margin-top: 0">
+                            <a href="{% url 'main:yangilik' post.id %}">
+                                <p class="last-news-text">{{ post.title }}</p>
+                                <p class="news-icon"><i class="fa fa-calendar"></i>
+                                    {{ post.create_at|date:'d-m-Y' }} |{{ post.create_at|time:'H:i' }}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function display() {
+            window.print();
+        }
+    </script>
+
+{% endblock %}

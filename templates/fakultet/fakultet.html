@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div>
+        <div class="fakultet-title" style="background-image: url({% static 'assets/images/medik.jpg' %})">
+            <p>Institut fakultetlari</p><br>
+            <ul>
+                <li><a href="/">Asosiy sahifa</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <section class="fakultet-blog">
+            <div class="fakultet-content">
+                <div class="fakultet-blogs">
+                    {#                    @foreach ($data as $item)#}
+
+                    <div class="f-blog">
+                        <h2 class="fakultet-name">{{ faculty.name }}</h2>
+
+                        <span class="blog">
+{#                            @foreach ($xodim as $info)#}
+{#                            @if ( $info['blog_id'] == $item['nom'] && $info['job'] == 'option2')#}
+{#                                <img src="" alt=""/>#}
+{#                                <span class="dekan">#}
+{#                                    <ul>#}
+{#                                    	<li><b>{{ __('main.dekan') }} </b>{{ $info['name'] }}</li>#}
+{#                                    	<li><i>{{ $info['idu'] }}</i></li>#}
+{#                                    	<li><b>{{ __('main.telefon') }} </b>{{ $info['nomer'] }}</li>#}
+{#                                    	<li><b>E-mail: </b>{{ $info['mail'] }}</li>#}
+{#                                    	<li><b>{{ __('main.muddat') }} </b>{{ $info['manzil'] }}</li>#}
+{#                                    	<li><b>{{ __('main.qabul_v') }} </b>{{ __('main.harkuni') }} 14<sup>00</sup>-18<sup>00</sup></li>#}
+{#                                    </ul>#}
+{#                                </span>#}
+{#                            @endif#}
+{#                            @endforeach#}
+                        </span>
+
+                        <span class="zamdekan">
+{#                                @foreach ($xodim as $info)#}
+{#                                @if ( $info['blog_id'] == $item['nom'] && $info['job'] == 'zamdekan')#}
+
+{#                                <div>#}
+{#                                    <nav>#}
+{#                                    	<p>{{ $info['name'] }}</p>#}
+{#                                    	<ul>#}
+{#                                        	<li><i class="fa fa-phones"></i>{{$info['nomer']}}</li>#}
+{#                                        	<li><i class="fa fa-envelopes"></i>{{$info['mail']}}</li>#}
+{#                                    	</ul>#}
+{#                                     </nav>#}
+{#                                </div>#}
+
+{#                                @endif#}
+{#                                @endforeach#}
+                            </span>
+
+                        <div class="about sf">
+{#                            <h3>{{ faculty.name }}</h3>#}
+                            <p>{{ faculty.content|safe }}</p>
+                        </div>
+                    </div>
+
+{#                    @endforeach#}
+                </div>
+                <div class="kafedra-blogs-w">
+                    {% if chairs %}
+                        <nav>
+                            <h3>Kafedralar</h3>
+                            {% for chair in chairs %}
+                                <a href="{% url 'faculty:kafedra' chair.sub_name %}"><p>{{ chair.name }} </p></a>
+                            {% endfor %}
+                        </nav>
+                        <br>
+                    {% endif %}
+
+                    <nav>
+                        <h3>Fakultetlar</h3>
+                        {% for facult in faculties %}
+                            <a href="{% url 'faculty:fakultet' facult.sub_name %}"><p>{{ facult.name }}</p></a>
+                        {% endfor %}
+
+                    </nav>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+{% endblock %}

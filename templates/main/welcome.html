@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="welcome">
+        <div class="corusel">
+            <div class="slider">
+                <nav class="slide-box">
+                    <nav class="institut-name">
+					<span>
+						<h1>Toshkent Davlat Stomotologiya Institut</h1>
+					</span>
+                    </nav>
+                    <img src="{% static 'assets/images/slider/stom.png' %}" alt="rasm"/>
+                </nav>
+            </div>
+        </div>
+
+        <section class="havolalar">
+            <br><br><br>
+            <div class="havola">
+            <span class="h-blog">
+                <i style="background-color: #51e2f5" class="fa fa-user"></i>
+                <a href="{% url 'faculty:fakultetlar' %}"><p>Fakultetlar</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: #a28089" class="fa fa-users"></i>
+                <a href="{% url 'faculty:kafedralar' %}"><p>Kafedralar</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: #34568B" class="fa fa-maxcdn"></i>
+              <a href="{% url 'main:markazlar' %}"><p>Markaz va bo'limlar</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: #88B04B" class="fa fa-folder-open"></i>
+               <a href="https://student.tsdi.uz/dashboard/diploma"><p>Diplomni tasdiqlash</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: #45B8AC" class="fa fa-envelope-o"></i>
+                <a href="https://e-xat.tsdi.uz/"><p>e-Xat</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: orange" class="fa fa-graduation-cap"></i>
+                <a href="https://moodle.tsdi.uz/login/index.php"><p>Moodle tizimi</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: #3c8dbc" class="fa fa-users"></i>
+                <a href="https://hemis.tsdi.uz/dashboard/login"><p>Hemis-o'qituvchi</p></a>
+            </span>
+                <span class="h-blog">
+                <i class="fa fa-graduation-cap"></i>
+                <a href="https://student.tsdi.uz/dashboard/login"><p>Hemis-talaba</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: #3c556e" class="fa fa-book"></i>
+                <a href="https://library.tsdi.uz/"><p>Kutubxona</p></a>
+            </span>
+                <span class="h-blog">
+                <i style="background-color: purple" class="fa fa-server"></i>
+                <a href="{% url 'main:xizmatlar' %}"><p>i-Xizmatlar</p></a>
+            </span>
+            </div>
+        </section>
+
+        <section class="i-servsec">
+            <div class="i-service">
+                <h1 class="section-title"><label>Statistik Ko'rsatkichlar</label></h1>
+                <p class="section-shortitle">Institut ta`lim jarayonidagi asosiy ko`rsatkichlar</p>
+                <br><br>
+                <div class="services">
+                    <nav class="service">
+                        <p id="xt" class="number"> Tadqiqodchilar soni 186</p>
+                        <p class="who">Tadqiqodchilar jami 26 ta ixtisoslikda izlanish olib bormoqda</p>
+                    </nav>
+                    <nav class="service">
+                        <p id="pro" class="number">Professorlar soni 225</p>
+                        <p class="who">Institutda jami 552 ta o`qituvchilar faoliyat olib bormoqda</p>
+                    </nav>
+                    <nav class="service">
+                        <p id="bt" class="number">Xorijiy talabalar 4742</p>
+                        <p class="who">Institutda jami 4808 ta talaba tahsil olmoqda</p>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yangiliklar -->
+        <section class="news-box-sec">
+            <div class="news-box">
+                <div class="news">
+                    {% for new in news %}
+                        <span class="new">
+				            <em class="newstime">{{ new.create_at|date:'d-m-Y' }} |{{ new.create_at|time:'H:i' }}</em>
+                            <a class="new-a" href="{% url 'main:yangilik' new.id %}">
+               		            <div>
+                                    <img src="{{ new.image.url }}" alt="Yangiliklar"/>
+                                </div>
+               		            <div class="matn-box">
+                                    <p class="matn" id="text">
+                                        <i class="fa fa-address-card-o"></i>
+                                        {{ new.title|slice:106}}
+                                    </p>
+                                </div>
+                            </a>
+                        </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="institut-sect">
+            <div class="institut">
+                <h1 class="section-title"><label>Toshkent Davlat Stomotologiya Instituti</label></h1>
+                <br><br><br>
+                <div class="videos">
+            <span class="main-video">
+				<video id="myvideo" width="100%" height="100%" controls="controls">
+  					<source src="{% static 'assets/media/welcome/main.webm' %}" type="video/mp4">
+  					<source src="movie.ogg" type="video/ogg">
+				</video>
+            </span>
+                    <span class="addition">
+                <span class="video">
+                	<video id="myvideo" width="100%" height="100%" style="border-radius: 5px;" controls="controls">
+  						<source src="{% static 'assets/media/welcome/manaviyat.webm' %}" type="video/mp4">
+  						<source src="movie.ogg" type="video/ogg">
+					</video>
+                </span>
+                <span class="video">
+                	<video id="myvideo" width="100%" height="auto" style="border-radius: 5px;" controls="controls">
+  						<source src="{% static 'assets/media/welcome/media.webm' %}}" type="video/mp4">
+  						<source src="movie.ogg" type="video/ogg">
+					</video>
+                </span>
+            </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hamkorlar -->
+        <section class="hamkor-box">
+            <div class="hamkorlar" id="hamkor-scrol">
+                {% for partner in partners %}
+                    <nav class="hamkor">
+                        <a href="{{ partner.url }}">
+                            <img src="{{ partner.image.url }}" alt="Hamkor"/>
+                            <p class="hamkor-name">{{ partner.name }}</p>
+                        </a>
+                    </nav>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="statistika_bottom">
+
+            <div class="content">
+			<span>
+				<h2>Institut haqida</h2>
+				<p>Taʼlim maskanida darslar anʼanaviy tazrda oʻtkaziladi, talabalarning stomatologiya sohasini
+                    chuqur egallashlari uchun yetarli sharoitlar yaratilgan.
+                    Talabalikka qaboʻl qilingan oʻquvchilar institutni maxsus kartalari bilan taʼminlanadi,
+                    labaratoriya xonalarida va maʼruza xonalarida darslar olib boriladi.</p>
+			</span>
+                <nav>
+                    <p>Asos solingan</p>
+                    <h2>2014</h2>
+
+                </nav>
+                <nav>
+                    <p>Fakultetkar soni</p>
+                    <h2>5</h2>
+
+                </nav>
+                <nav>
+                    <p>Kafedralar soni</p>
+                    <h2>32</h2>
+
+                </nav>
+            </div>
+
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="markaz-title" style="background-image: url({% static 'assets/images/medik.jpg' %})">
+        <p>Korrupsiyaga qarshi kurash</p>
+        <ul>
+            <li><a href="/">Asosiy sahifa</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <section class="markaz-blog" style="background-image:url(https://www.gov.uz/img/title_bg.png)">
+        <div class="korrup-blogs">
+            <div class="korrup-left">
+                <nav>
+                    <a href="{% url 'main:sahifa' 'korrupsiya-normativ-huquqiy-hujjatlar' %}"><p class="k-sahifa">
+                        Normativ-huquqiy hujjatlar</p></a>
+                    <a href="#"><p class="k-sahifa">Amalga oshiriligan ishlar</p></a>
+                    <a href="#"><p class="k-sahifa">KQK "Komplayens nazorat" TBB faoliyati to`g`risida</p></a>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="p-contact"><a><i class="fa fa-fax"></i> +998 (71) 230-48-05</a></p>
+                    <br>
+                    <p class="p-contact"><a href="https://t.me/+j6xVYKwaMbwzNjgy"><i class="fa fa-paper-plane"></i>
+                        Telegram sahifasi</a></p>
+                </nav>
+            </div>
+            <div class="korrup-main">
+                <div class="korrupsiya-main">
+                    <h2>Korrupsiyaga qarsgi kurashish oid faoliyat</h2>
+                    <br><br>
+                    <nav>
+                        <nav class="korrupsiya-video">
+                            <video style="border-radius: 2px" width="49%" height="auto" controls>
+                                <source src="https://tsdi.uz/storage/korrupsiya/Vijdon_saratoni_hujjatli_filmi_%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC_%C2%AB%D0%A0%D0%B0%D0%BA_%D1%81%D0%BE%D0%B2%D0%B5%D1%81%D1%82%D0%B8%C2%BB.mp4"
+                                        type="video/mp4">
+                                <source src="" type="video/ogg">
+                            </video>
+                            <video style="border-radius: 2px" width="49%" height="auto" controls>
+                                <source src="https://tsdi.uz/storage/korrupsiya/rolik%201%20(2).mp4" type="video/mp4">
+                                <source src="" type="video/ogg">
+                            </video>
+                        </nav>
+                        <br><br><br>
+                        <nav class="korrupsiya-video">
+                            <video style="border-radius: 2px" width="49%" height="auto" controls>
+                                <source src="https://tsdi.uz/storage/korrupsiya/%D0%9A%D0%BE%D1%80%D1%80%D1%83%D0%BF%D1%86%D0%B8%D1%8F%20%D0%BA%D0%B5%D0%BB%D0%B0%D0%B6%D0%B0%D0%BA%20%D0%BA%D1%83%D1%88%D0%B0%D0%BD%D0%B4%D0%B0%D1%81%D0%B8_1.mp4"
+                                        type="video/mp4">
+                                <source src="" type="video/ogg">
+                            </video>
+                            <video style="border-radius: 2px" width="49%" height="auto" controls>
+                                <source src="https://tsdi.uz/storage/korrupsiya/%D0%9A%D0%BE%D1%80%D1%80%D1%83%D0%BF%D1%86%D0%B8%D1%8F%20%E2%80%94%20%D1%82%D0%B0%D1%80%D0%B0%D2%9B%D2%9B%D0%B8%D1%91%D1%82%D0%B3%D0%B0%20%D2%9B%D0%B0%D1%80%D1%88%D0%B8%20%D0%B6%D0%B8%D0%BD%D0%BE%D1%8F%D1%82!.mp4"
+                                        type="video/mp4">
+                                <source src="" type="video/ogg">
+                            </video>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

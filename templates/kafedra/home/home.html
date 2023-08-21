@@ -1,0 +1,144 @@
+{% extends 'kafedra/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="bgded overlay padtop" style="background-image:url({% static 'asserts/images/kafedra.jpg' %});">
+        <header id="header" class="hoc clear">
+            <ul class="tillar">
+                <li><a href="#"><img src="{% static 'asserts/images/flag-en.png' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'asserts/images/flag-uz.png' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'asserts/images/flag-ru.png' %}" alt=""></a></li>
+            </ul>
+            <div id="logo" class="fl_left">
+                <h1 class="logotip"><a href="https://tsdi.uz/"> <img src="{% static 'asserts/images/logo.png' %}"
+                                                                     alt=""/>
+                    Tsdi.uz</a></h1>
+            </div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="#">Welcome</a></li>
+                    <li><a href="#">xodim</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="https://tsdi.uz/sahifalar%5Caloqa%20markazi">aloqa</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="breadcrumb" class="hoc clear">
+            <ul class="kafedra">
+                <li><a></a></li>
+                <li><a href="#">{{ kafedra.name }}</a></li>
+            </ul>
+        </div>
+    </div>
+    <h1>{{ name }}</h1>
+    <div class="wrapper row1">
+        <section id="ctdetails" class="hoc clear">
+            <ul class="nospace clear">
+                <li class="one_quarter first">
+                    <div class="block clear">
+                        <a href="https://hemis.tsdi.uz/dashboard/login">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>
+                                <strong class="a-tizim">Hemis-teacher</strong>
+                                <u class="a-tizim">hemis</u>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="one_quarter">
+                    <div class="block clear">
+                        <a href="https://student.tsdi.uz/dashboard/login">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>
+                                <strong class="a-tizim">Hemis-student</strong>
+                            <u class="a-tizim">hemis</u>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="one_quarter">
+                    <div class="block clear">
+                        <a href="https://moodle.tsdi.uz/login/index.php">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>
+                                <strong class="a-tizim"> Moodle</strong>
+                                <u class="a-tizim">moddle</u>
+                        </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="one_quarter">
+                    <div class="block clear">
+                        <a href="https://library.tsdi.uz/">
+                            <i class="fas fa-book"></i>
+                            <span>
+                                <strong class="a-tizim">
+                                    Kutubxona
+                                </strong>
+                                <u class="a-tizim">
+                                    Kutubxona
+                                </u>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+            <!-- main body -->
+            <div class="content">
+                <div id="gallery">
+                    <figure>
+                        <header class="heading elbek">Kafedraga oid yangilik va elonlar</header>
+                        <ul class="nospace clear">
+                            {% for new in news %}
+                                <li class="one_third wk-elon">
+                                    <a href="#">
+                                        <div>
+                                            <img src="{{ new.image.url }}" alt="">
+                                        </div>
+                                        <p>
+                                            {{ new.title }}
+                                        </p>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </figure>
+                </div>
+                <div>
+                    Bla Bla
+                </div>
+            </div>
+            <!-- / main body -->
+
+
+            <div class="clear">
+                <style>
+                    img {
+                        width: 500px;
+                        height: auto;
+                    }
+
+                    pre {
+                        padding-left: 100px;
+                        background-color: #00d4ff;
+                        color: #2e2751;
+                    }
+                </style>
+                {% for post in posts %}
+                    <h1>{{ post.title }}</h1>
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="">
+                    {% endif %}
+                    <p>
+                        {{ post.description|safe }}
+                    </p>
+                {% endfor %}
+
+            </div>
+        </main>
+    </div>
+{% endblock %}

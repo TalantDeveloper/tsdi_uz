@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>
+      {% block title %}
+      Gospital terapevtik stomatologiya kafedrasi
+      {% endblock %}
+  </title> <!-- Kafedra name -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{% static 'asserts/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+  <link rel="icon" type="image/x-icon" href="{% static 'asserts/images/favicon.ico' %}">
+</head>
+<body id="top">
+
+    {% block content %}
+
+    {% endblock %}
+
+<div class="wrapper row4">
+    <!-- Footer yangilash kerak -->
+  <footer id="footer" class="hoc clear">
+    <div class="one_fives first">
+      <a href="https://tsdi.uz/">
+          <h6 class="heading foot-logo">
+              <img src="{% static 'asserts/images/logo.png' %}" alt="rasm"/>
+              Tsdi.uz
+          </h6>
+      </a>
+    </div>
+    <div class="one_fives">
+      <a href="#" class="heading">bosh</a>
+    </div>
+    <div class="one_fives">
+      <a href="#" class="heading">xodim</a>
+    </div>
+    <div class="one_fives">
+      <a href="#" class="heading">About</a>
+    </div>
+    <div class="one_fives">
+      <a href="https://tsdi.uz/sahifalar%5Caloqa%20markazi" class="heading">aloqa</a>
+    </div>
+    <div class="one_fives last">
+      <p>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      </p>
+    </div>
+  </footer>
+</div>
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+
+<script src="{% static 'asserts/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'asserts/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'asserts/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="kafedra-title" style="background-image: url({% static 'assets/images/medik.jpg' %})">
+        <p>Fakultetlar</p>
+        <ul>
+            <li><a href="/static">Asosiy sahifa</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <section class="kafedra-blog">
+        <div class="kafedra-blogs">
+        {% for faculty in faculties %}
+        <div class="kafedra">
+                <a href="{% url 'faculty:fakultet' faculty.sub_name %}">
+                <i class="fa fa-graduation-cap"></i>
+                <h3 class="kafedra-name">
+                    {{ faculty.name }}
+                </h3>
+                </a>
+            </div>
+        {% endfor %}
+          	<div class="kafedra">
+                <a href="https://admin.tsdi.uz/admin">
+                <i class="fa fa-sign-out"></i>
+                <h3 class="kafedra-name">
+                    Login
+                </h3>
+                </a>
+            </div> 
+        </div>
+    </section>
+{% endblock %}

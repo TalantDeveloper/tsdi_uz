@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <meta name='copyright' content='pavilan'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'assets/styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/styles/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/styles/icons/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/styles/icons/css/font-awesome.min.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/logotip.ico' %}">
+    <link rel="stylesheet" id="opensans-googlefont-css"
+          href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300&amp;ver=6.0.3" type="text/css" media="all">
+    <script src="{% static 'assets/scripts/jQuery.js' %}"></script>
+
+    <title>Toshkent Davlat Stomatologiya Instituti</title>
+
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        body::-webkit-scrollbar {
+            width: 0.3em;
+        }
+
+        body::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid slategrey;
+        }
+
+        .demo {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .demo a {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+        }
+
+        #user-counter {
+            position: absolute;
+        }
+
+
+        .loader-box {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: rgb(61, 101, 251);
+            z-index: 15;
+            text-align: center;
+        }
+
+        .center {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .ring {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: ring 3s linear infinite;
+
+        }
+
+        @keyframes ring {
+            0% {
+                transform: rotate(0deg);
+                box-shadow: 4px 10px 5px #00d4ff;
+                /* transform: rotateY(0deg); */
+            }
+            50% {
+                transform: rotate(180deg);
+                box-shadow: 4px 10px 5px #4040d6;
+                /* transform: rotateY(180deg); */
+            }
+            100% {
+                transform: rotate(360deg);
+                box-shadow: 4px 10px 5px #86bbd0;
+                /* transform: rotateY(360deg); */
+            }
+        }
+
+        .ring::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgb(255, 255, 255, .3);
+        }
+
+        #ring-span {
+            color: #737373;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 200px;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body id="body">
+
+<div class="loader-box" id="loader-box">
+    <div class="center">
+        <div class="ring"></div>
+        <span id="ring-span"
+              style="background-image: url({% static 'assets/images/logotip.png' %});background-size: cover;"></span>
+    </div>
+</div>
+
+<div class="right-tab">
+    <a href="https://www.facebook.com/100007790684005/videos/475766024313497/"><i class="fa fa-facebook"></i></a>
+
+    <a href="https://t.me/tsdi_official"><i class="fa fa-paper-plane"></i></a>
+
+    <a href="https://instagram.com/tsdi_uz?igshid=NmZiMzY2Mjc="><i class="fa fa-instagram"></i></a>
+
+    <a href="https://www.youtube.com/channel/UCiRSwWPEEXJ1_ptNtvh22tg"><i class="fa fa-youtube"></i></a>
+
+    <a href="https://mail.tsdi.uz/"><i class="fa fa-envelope"></i></a>
+</div>
+
+<div class="header">
+    <div class="headTop">
+        <ul class="addition-links">
+            <li><a href="https://hemis.tsdi.uz/dashboard/login">
+                Hemis-o'qituvchi
+            </a></li>
+
+            <li><a href="https://student.tsdi.uz/dashboard/login">
+                hemis-talaba
+            </a></li>
+
+            <li><a href="https://moodle.tsdi.uz/login/index.php">
+                Moodle tizimi
+            </a></li>
+
+            <li><a href="https://library.tsdi.uz/">
+                Kutubxona
+            </a></li>
+
+            <li><a href="https://adabiyot.tsdi.uz/">
+                adabiyot ekspertiza
+            </a></li>
+
+            <li><a href="https://e-xat.tsdi.uz/">
+                e-xat
+            </a></li>
+
+            <nav class="list-menu-box">
+
+            </nav>
+
+        </ul>
+        <ul class="symbols">
+            <li><a href="{% url 'main:bayroq' %}"><img src="{% static 'assets/images/flag.png' %}" alt="Bayroq"/></a>
+            </li>
+            <li><a href="{% url 'main:gerb' %}"><img src="{% static 'assets/images/emblem.png' %}" alt="Gerb"/></a></li>
+            <li><a href="{% url 'main:madhiya' %}"><img src="{% static 'assets/images/anthem.png' %}"
+                                                        alt="Madhiya"/></a>
+            </li>
+        </ul>
+
+        <nav class="lang-box">
+            {% get_current_language as current_language %}
+            {% get_available_languages as available_languages %}
+            {% get_language_info_list for available_languages as langs %}
+            <p class="current-lang">
+                <i class="fa fa-language"></i> {{ current_language }} </p>
+            <span class="langs">
+                    {% for lang in langs %}
+                        <a class=""
+                           href="/{{ lang.code }}"><p>{{ lang.name_local }}</p></a>
+                    {% endfor %}
+
+
+				</span>
+        </nav>
+    </div>
+</div>
+
+<div class="header-bottom wk">
+    <div>
+        <ul class="list-box">
+            <li class="list"><a href="/" class="list-a"><i class="fa fa-home"></i></a></li>
+
+            <li class="list"><a class="list-a">Institut</a>
+                <ul class="inner-lists">
+
+                    <li><a href="{% url 'main:rektorat' %}">Ma'muriyat</a></li>
+
+                    <li>
+                        <a href="https://tsdi.uz/storage/%D0%A2%D0%94%D0%A1%D0%98_%D1%83%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D0%BD%D0%B8_%D1%82%D0%B0%D1%81%D0%B4%D0%B8%D2%9B%D0%BB%D0%B0%D1%88_%D1%82%D1%9E%D2%93%D1%80%D0%B8%D1%81%D0%B8%D0%B4%D0%B0.pdf">Nizomlar</a>
+                    </li>
+
+                    <li><a href="{% url 'main:vazifa' %}">Institut vazifalari</a></li>
+
+                    <li><a href="{% url 'main:sahifa' 'institut-tuzilmasi' %}">Institut strukturasi</a></li>
+
+                    <li><a href="https://tsdi.uz/storage/jurnallar/Oktyabr%202022.pdf">Stomatologiya jurnali</a></li>
+
+                </ul>
+            </li>
+            <!-- Fakultetlar -->
+            <li class="list"><a class="list-a">Fakultetlar</a>
+                <ul class="inner-lists il1">
+                    {% for faculty in faculties %}
+                        <li><a href="{% url 'faculty:fakultet' faculty.sub_name %}">{{ faculty.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="list l2"><a class="list-a">Faoliyat</a>
+                <ul class="inner-lists il2">
+
+                    <li><a href="https://ilmiy.tsdi.uz">Ilmin faoliyat</a></li>
+
+                    <li><a href="https://oquv.netlify.app/">O'quv-uslubiy faoliyat</a></li>
+
+                    <li class="inner"><a>Xalqaro faoliyat</a>
+
+                        <ul class="inner-inner-lists">
+
+                            <li>
+                                <a href="{% url 'main:sahifa' 'xalqaro-faoliyat' %}">Xalqaro faoliyat</a>
+                            </li>
+                            <!--
+                                <li>
+                                    <a href="#">Nodavlat tashkilotlari bilan hamkorlik</a>
+                                </li>
+                            -->
+                        </ul>
+
+                    </li>
+
+                    <li class="inner"><a href="#">Moliyaviy faoliyat</a>
+                        <ul class="inner-inner-lists">
+                            <li><a href="{% url 'main:sahifa' 'rekvizitlar' %}">TSDI Rekvizitlar</a></li>
+                            <li>
+                                <a href="{% url 'main:sahifa' 'xalqaro-akkerditatsiya' %}">Xalqaro Akkerdidatsiya</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:sahifa' 'milliy-akkerditatsiya' %}">Milliy Akkerdidatsiya</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'main:sahifa' 'ma’naviy-ma’rifiy-ishlar' %}">Ma’naviy-ma’rifiy ishlar</a></li>
+                    <li class="inner"><a href="#">VI Kongress</a>
+                        <ul class="inner-inner-lists">
+                            <li><a href="{% static 'storage/congress/bgc/Information letter.pdf' %}">Sog'liqni saqlash
+                                vazirligi</a></li>
+                            <li><a href="{% static 'storage/congress/bgc/Информ_письмо 8.02.2023.pdf' %}">VI
+                                Kongress</a></li>
+                            <li><a href="#">VI Kangress Programm</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="list l5">
+                <a class="list-a">Talabalarga</a>
+                <ul class="inner-lists il5">
+                    <li><a href="https://kontrakt.edu.uz/">Shartnoma olish</a></li>
+                    <li class="inner"><a href="#">Dars jadvali</a>
+                        <ul class="inner-inner-lists">
+                            <li><a href="{% url 'main:sahifa' 'bakalavr-dars-jadvali' %}">Bakalavriat</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:sahifa' 'magistratura-dars-jadvali' %}">Magistratura</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'main:sahifa' 'xorijiy-talabalar' %}">Xorijiy talabalar</a></li>
+                    <li><a href="{% url 'main:sahifa' 'o‘qishni-ko‘chirish-tartibi' %}">O'qishni ko'chirish</a></li>
+                    <li><a href="{% url 'main:sahifa' 'aloqa-markazi' %}">Call markazi</a></li>
+                    <li><a href="{% url 'main:sahifa' 'iqtidorli-talabalar' %}">Iqtidorli talabalar</a></li>
+                </ul>
+            </li>
+            <li class="list"><a href="{% url 'main:yangiliklar' %}" class="list-a">Yangiliklar</a></li>
+            <li class="list l6"><a class="list-a">Qabul</a>
+                <ul class="inner-lists il6">
+
+                    <li><a href="{% url 'main:sahifa' 'aloqa' %}">Call markazi</a></li>
+                    <!--
+                                <li class="inner"><a>MBBS/General Medicine</a>
+                                    <ul class="inner-inner-lists">
+                                        <li><a href="#">MBBS Inside</a></li>
+
+                                        <li><a href="#">MBBS Mayo team motivation</a>
+                                        </li>
+                                        <li style="display:none"><a href="#">MBBS Peoplehive</a></li>
+
+                                        <li><a href="#">Indian Corporation Hub</a></li>
+
+                                        <li><a href="#">BGC Education</a></li>
+
+                                    </ul>
+                                </li>
+                    -->
+                    <li class="inner"><a>Bakalavriat</a>
+                        <ul class="inner-inner-lists">
+                            <li>
+                                <a href="{% url 'main:sahifa' 'abiturientlar-uchun-eslatma' %}">Online qabul</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'main:sahifa'  'imtixon-fanlari-royhati' %}">Imtihon fanlari
+                                    ro'yxati</a>
+                            </li>
+
+                            <li><a href="{% url 'main:sahifa' 'bakalavr-qabul-kvotasi' %}">Qabul kvotasi</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'main:sahifa' 'bakalavr-tolov-kontrakti-miqdori' %}">To'lov kontrakti
+                                    miqdori</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="inner"><a>Magistratura</a>
+                        <ul class="inner-inner-lists">
+                            <li><a href="#">Imtihon natijasi</a>
+                            </li>
+
+                            <li><a href="https://magistr.edu.uz">Online qabul</a></li>
+
+                            <li><a href="{% url 'main:sahifa' 'magistratura-qabul-kvotasi' %}">Qabul kvotasi</a></li>
+
+                            <li>
+                                <a href="{% url 'main:sahifa' 'magistratura-tolov-kontrakti-miqdori' %}">To'lov
+                                    kontrakti miqdori</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="inner"><a>Klinik ordinatura</a>
+                        <ul class="inner-inner-lists">
+                            <li>
+                                <a href="https://tsdi.uz/storage/%D0%9E%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D1%83%D1%80%D0%B0.pdf">Imtihon
+                                    natijasi</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Mahalliy ta'lim dasturi</a>
+                            </li>
+
+                            <li><a href="#">Qabul kvotasi</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'main:sahifa' 'ordinatura-hujjatlar-royxati' %}">Hujjatlar ro'yhati</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--
+                            <li class="inner"><a>Qo'shma ta'lim dasturi</a>
+                                <ul class="inner-inner-lists">
+                                    <li><a href="https://tsdi.uz/yangilik%5C121">Imtixon natijasi</a></li>
+
+                                    <li>
+                                        <a href="https://tsdi.uz/storage/%D1%81%D0%B0%D0%B9%D1%82%D0%B3%D0%B0%20%D2%9B%D1%9E%D1%88%D0%BC%D0%B0%20%D1%82%D0%B0%D1%8A%D0%BB%D0%B8%D0%BC%20(2)_removed%20(1).pdf">Bakalavriat</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Qabul kvotasi</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">Klinik ordinatura</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            -->
+                    <li class="inner"><a>Xorijiy fuqarolar</a>
+                        <ul class="inner-inner-lists">
+                            <li>
+                                <a href="https://tsdi.uz/storage/qoshma%20talim%20ariza/Toshkent_davlat_stomatologiya_institutiga_xorijiy_fuqarolarni_2022.pdf">Imtixon
+                                    natijasi</a>
+                            </li>
+
+                            <li><a href="{% url 'main:sahifa' 'xorijiy-fuqarolarga' %}">Bakalavriat</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li><a href="#">N.I. Pirogov nomidagi RMTTU</a></li>
+
+                    <li><a href="#">Litsey imtixon natijalari</a></li>
+            -->
+                </ul>
+            </li>
+            <li class="list l6"><a class="list-a">Olimpiada-2023</a>
+                <ul class="inner-lists il6">
+                    <li><a href="{% url 'main:sahifa' 'olimpiada-taklifnoma' %}">Taklifnoma</a></li>
+                    <li><a href="{% url 'main:sahifa' 'translation' %}">YouTube</a></li>
+                    <li>
+                        <a href="https://tsdi.uz/storage/%D0%9F%D0%A0%D0%9E%D0%93%D0%A0%D0%90%D0%9C%D0%9C%D0%90%20%D0%9E%D0%9B%D0%98%D0%9C%D0%9F_10.pdf">OLIMPIADA
+                            DASTURI</a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+        <nav class="under-list">
+            <a href="{% url 'main:qabulxona' %}"><p>Rektor qabulxonasi</p></a>
+            <a href="{% url 'main:sahifa' 'aloqa-markazi' %}"><p>Qabul markazi</p></a>
+            <a href="{% url 'main:antikorrupsiya' %}"><p>Antikorrupsiya</p></a>
+        </nav>
+    </div>
+</div>
+
+{% block content %}
+
+{% endblock %}
+
+<div class="footer">
+    <div class="foot-name">
+        <h2>Toshkent Davlat Stomotologiya Instituti</h2>
+    </div>
+    <div class="foot-menu">
+        <div class="foot-content">
+            <nav>
+                <h4>Institut</h4>
+                <a href="#"><p>Ma'muriyat</p></a>
+                <a href="https://tsdi.uz/storage/%D0%A2%D0%94%D0%A1%D0%98_%D1%83%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D0%BD%D0%B8_%D1%82%D0%B0%D1%81%D0%B4%D0%B8%D2%9B%D0%BB%D0%B0%D1%88_%D1%82%D1%9E%D2%93%D1%80%D0%B8%D1%81%D0%B8%D0%B4%D0%B0.pdf">
+                    <p>Institut vazifalari</p></a>
+                <a href="#"><p>Institut strukturasi</p></a>
+                <a href="https://tsdi.uz/storage/180.pdf"><p>Ichki tartib qoidalar</p></a>
+
+                <br>
+                <h4>Institut jurnallari</h4>
+                <a href="https://tsdi.uz/storage/jurnallar/Oktyabr%202022.pdf"><p>Stomatologiya jurnali</p></a>
+                <a href="https://tadqiqot.uz/jurnali/biomedicine/"><p>Biotibbiyot va amaliyot jurnali</p></a>
+                <a href="https://tadqiqot.uz/jurnali/biomedicine/"><p>Tibbiyot va innovatsiyalar jurnali</p></a>
+
+            </nav>
+            <nav>
+                <h4>Faoliyat</h4>
+                <a href="https://ilmiy.tsdi.uz/"><p>Ilmiy faoliyat</p></a>
+                <a href="https://tsdi.netlify.app/"><p>O'quv-uslubiy faoliyat</p></a>
+
+                <br>
+                <h4>Xalqaro faoliyat</h4>
+                <a href="https://tsdi.uz/sahifalar%5CXalqaro%20faoliyat"><p>Xalqaro faoliyat</p></a>
+                <a href="https://tsdi.uz/sahifalar%5CNodavlat%20tashkilotlari%20bilan%20hamkorlik">
+                    <p>Nodavlat tashkilotlari bilan hamkorlik</p></a>
+                <br>
+                <h4>Moliyaviy faoliyat</h4>
+                <a href="https://tsdi.uz/sahifalar%5CRekvizitlar"><p>TSDI Rekvezitlar</p></a>
+                <a href="https://tsdi.uz/sahifalar%5CXalqaro%20Akkerditatsiya"><p>Xalqaro Akkerditatsiya</p>
+                </a>
+                <a href="https://tsdi.uz/sahifalar%5CMilliy%20Akkerditatsiya"><p>Milliy Akkerditatsiya</p>
+                </a>
+            </nav>
+            <nav>
+                <h4>Fakultetlar</h4>
+                <a href="#"><p>Stomotologiya fakulteti</p></a>
+                <a href="#"><p>Bolalar Stomotologiyasi fakulteti</p></a>
+                <a href="#"><p>Tibbiy pedagogik va tibbiyot fakulteti</p></a>
+                <a href="#"><p>Xalqaro ta\'lim fakulteti</p></a>
+                <a href="#"><p>Malaka oshirish fakulteti</p>
+                </a>
+                <br>
+                <h4>Kafedralar</h4>
+                <a href="#"><p>Kafedralar A - Z</p></a>
+                <br>
+
+                <h4>Markaz va bo'limlar</h4>
+                <a href="#"><p>Markazlar A - Z</p></a>
+                <a href="#"><p>Bo'limlar A - Z</p></a>
+            </nav>
+            <nav>
+                <h4>Institut kengashi</h4>
+                <a href="#"><p>Kengash qarori</p></a>
+                <a href="#"><p>Kengash kun tartibi</p></a>
+                <a href="#"><p>Tarqatma materiallar</p></a>
+                <br>
+                <h4>Online ta'lim</h4>
+                <a href="https://moodle.tsdi.uz/login/index.php"><p>Moodle tizimi</p></a>
+                <a href="https://student.tsdi.uz/dashboard/login"><p>Hemis-talaba'</p></a>
+                <a href="https://hemis.tsdi.uz/dashboard/login"><p>Hemis-o'qituvchi</p></a>
+                <a href="https://library.tsdi.uz/"><p>Kutubxona</p></a>
+            </nav>
+            <nav>
+                <h4>Biz bilan Aloqa</h4>
+                <p>info@tsdi.uz</p>
+                <p>tdsi2016@mail.ru</p>
+                <p> Devonxona +998(71) 230-20-73</p>
+                <p>Ishonch telefoni +998(71) 230-20-65</p>
+                <p>103, Taraqqiyot ko'chasi, Toshkent .sh</p>
+                <p>
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d73176.37469010465!2d69.299005!3d41.309198!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41490626bc752d26!2sToshkent%20davlat%20stomatologiya%20instituti%20eski!5e1!3m2!1sen!2sus!4v1673277718347!5m2!1sen!2sus"
+                            width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </p>
+            </nav>
+        </div>
+
+    </div>
+    <div class="foot-copyright">
+        <div class="foot-content">
+            <a href="/"><img class="viscount" src="{% static 'assets/images/logo.png' %}" alt="logo"/></a>
+            <p>
+                Barcha huquqlar himoyalangan. Saytdagi barcha huquqlar O'zbekiston Respublikasi qonunlariga, shu
+                jumladan mualliflik
+                huquqi va turdosh huquqlarga muvofiq himoya qilinadi. Sayt materiallaridan foydalanganda, Toshkent
+                davlat stomatologiya
+                instituti saytiga havola ko'rsatilishi shart. Diqqat! Agar siz matnda xatoliklarni aniqlasangiz,
+                ularni belgilab, web sayt ma'murini xabardor qilish uchun biz bilan bog'lanishingizni so'raymiz
+            </p>
+
+            <p>
+                <SCRIPT language="javascript" type="text/javascript">
+                    top_js = "1.0";
+                    top_r = "id=37043&r=" + escape(document.referrer) + "&pg=" + escape(window.location.href);
+                    document.cookie = "smart_top=1; path=/";
+                    top_r += "&c=" + (document.cookie ? "Y" : "N")
+                </SCRIPT>
+                <SCRIPT language="javascript1.1" type="text/javascript">
+                    top_js = "1.1";
+                    top_r += "&j=" + (navigator.javaEnabled() ? "Y" : "N")
+                </SCRIPT>
+                <SCRIPT language="javascript1.2" type="text/javascript">
+                    top_js = "1.2";
+                    top_r += "&wh=" + screen.width + 'x' + screen.height + "&px=" +
+                        (((navigator.appName.substring(0, 3) == "Mic")) ? screen.colorDepth : screen.pixelDepth)
+                </SCRIPT>
+                <SCRIPT language="javascript1.3" type="text/javascript">
+                    top_js = "1.3";
+                </SCRIPT>
+                <SCRIPT language="JavaScript" type="text/javascript">
+                    top_rat = "&col=0063AF&t=ffffff&p=E6850F";
+                    top_r += "&js=" + top_js + "";
+                    document.write('<a href="https://www.uz/ru/res/visitor/index?id=37043" target=_top><img src="https://cnt0.www.uz/counter/collect?' + top_r + top_rat + '" width=88 height=31 border=0 alt="Топ рейтинг www.uz"></a>')
+                </SCRIPT>
+                <NOSCRIPT>
+                    <a href="https://www.uz/ru/res/visitor/index?id=37043" target=_top>
+                        <img height=31
+                             src="https://cnt0.www.uz/counter/collect?id=37043&pg=http%3A//uzinfocom.uz&&col=7DC53B&amp;t=ffffff&amp;p=DD444E"
+                             width=88 border=0 alt="Топ рейтинг www.uz">
+                    </a>
+                </NOSCRIPT>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+<script src="{% static 'assets/scripts/main.js' %}"></script>
+</html>
