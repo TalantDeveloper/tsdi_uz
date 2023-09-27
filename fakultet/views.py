@@ -9,6 +9,7 @@ def faculties_view(request):
     }
     return render(request, 'fakultet/fakultetlar.html', content)
 
+
 def faculty_view(request, sub_name):
     faculty = Faculty.objects.get(sub_name=sub_name)
     faculties = Faculty.objects.all()
@@ -41,11 +42,14 @@ def kafedra_view(request, sub_name):
     }
     return render(request, 'kafedra/home/home.html', content)
 
+
 def news_view(request):
     return render(request, 'kafedra/home/news.html')
 
+
 def xodim(request):
     return render(request, 'kafedra/home/xodim.html')
+
 
 def about(request):
     return render(request, 'kafedra/home/about.html')
