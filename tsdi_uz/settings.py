@@ -115,8 +115,12 @@ WSGI_APPLICATION = 'tsdi_uz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tsdi',
+        'USER': 'postgres',
+        'PASSWORD': '@bOTIRJON06',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
